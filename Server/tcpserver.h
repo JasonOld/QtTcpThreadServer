@@ -12,7 +12,7 @@ class TcpServer : public QTcpServer
 {
     Q_OBJECT
 public:
-    explicit TcpServer(QObject *parent = 0,int numConnections = 10000);
+    explicit TcpServer(QObject *parent = nullptr,int numConnections = 10000);
     ~TcpServer();
 
     void setMaxPendingConnections(int numConnections);//重写设置最大连接数函数

@@ -32,7 +32,7 @@ void TcpServer::incomingConnection(qintptr socketDescriptor) //多线程必须�
     auto th = ThreadHandle::getClass().getThread();
     auto tcpTemp = new TcpSocket(socketDescriptor);
     QString ip =  tcpTemp->peerAddress().toString();
-    qint16 port = tcpTemp->peerPort();
+    quint16 port = tcpTemp->peerPort();
 
     connect(tcpTemp,&TcpSocket::sockDisConnect,this,&TcpServer::sockDisConnectSlot);//NOTE:断开连接的处理，从列表移除，并释放断开的Tcpsocket，此槽必须实现，线程管理计数也是考的他
     connect(this,&TcpServer::sentDisConnect,tcpTemp,&TcpSocket::disConTcp);//断开信号

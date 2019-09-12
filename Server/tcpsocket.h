@@ -13,7 +13,7 @@ class TcpSocket : public QTcpSocket
 {
     Q_OBJECT
 public:
-    explicit TcpSocket(qintptr socketDescriptor, QObject *parent = 0);
+    explicit TcpSocket(qintptr socketDescriptor, QObject *parent = nullptr);
     ~TcpSocket();
     QByteArray handleData(QByteArray data,const QString & ip, qint16 port);//用来处理数据的函数
 
